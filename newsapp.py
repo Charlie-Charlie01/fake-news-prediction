@@ -8,19 +8,19 @@ from nltk.stem.porter import PorterStemmer
 import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-# Download NLTK resources
-@st.cache_resource
-def download_nltk_resources():
-    nltk.download('stopwords')
-
-download_nltk_resources()
-
 # Set page config
 st.set_page_config(
     page_title="Fake News Detector",
     page_icon="🔍",
     layout="wide"
 )
+
+# Download NLTK resources
+@st.cache_resource
+def download_nltk_resources():
+    nltk.download('stopwords')
+
+download_nltk_resources()
 
 # Load the saved model and vectorizer
 @st.cache_resource
